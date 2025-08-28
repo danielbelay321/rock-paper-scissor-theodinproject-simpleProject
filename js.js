@@ -1,6 +1,9 @@
 console.log('welcome to The game');
 console.log("---------------");
 
+userScore= 0;
+computerScore=0;
+
 function play(humanChoice, computerChoice){
 
     if(humanChoice === computerChoice){
@@ -9,20 +12,30 @@ function play(humanChoice, computerChoice){
 
     else if(humanChoice == "rock" && computerChoice == "scissor") {
         console.log("You win!");
+        userScore += 1;
 
     }
 
     else if(computerChoice == "rock" && humanChoice == "scissor") {
         console.log("You lose!");
+        computerScore += 1;
     }
 
     else if(humanChoice == "paper" && computerChoice == "rock") {
         console.log("You win!");
+        userScore += 1;
+
+    }
+
+    else if(humanChoice == "paper" && computerChoice == "scissor") {
+        console.log("You lose!");
+        computerScore += 1;
 
     }
 
     else if(computerChoice == "paper" && humanChoice == "rock") {
         console.log("You lose!");
+        computerScore += 1;
     }
 
 }
@@ -49,3 +62,6 @@ computerChoice = computerChoice();
 
 
 play(humanChoice, computerChoice);
+
+console.log("User Score: " + userScore);
+console.log("Computer Score: " + computerScore);
